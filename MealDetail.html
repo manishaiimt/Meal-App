@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="e">
+
+<head>
+    <title>Meal Detail</title> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container" style="text-align:center">
+        <h1>Meal Detail</h1>
+        <hr></hr>
+     <div class="row" style="align-items: center;text-align: center;">
+         <div class="feature col">
+                <div class="feature-icon">
+                    <img id="imageOfmeal" src="abc.pdf"/>
+                </div>
+                <h2 id="imageTitle">Meal Title</h2>
+                <p id="imageDescription">Description of the Meal</p>
+                
+         </div>
+     </div>   
+      </div>
+</body>
+<script>
+    console.log(window.mealId);
+    window.load=loadMealDetail(localStorage.mealId);
+    
+    function loadMealDetail(itemid){
+    let url1  = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="+itemid;
+    console.log(url1);
+        fetch(url1)
+        .then(response => response.json())
+        .then((data) => {
+            listOfItems = data.meals;
+            console.log(listOfItems.length);
+            var item = listOfItems[0];
+            var imageOfMeal = document.getElementById("imageOfmeal");
+            imageOfMeal.src=item.strMealThumb;
+            //console.log(imageOfMeal);
+            var imageTitle = document.getElementById("imageTitle");
+            imageTitle.innerText=item.strMeal;
+            var mealDescription = document.getElementById("imageDescription");
+            mealDescription.innerText=item.strInstructions;
+
+            //open the new page and it has to display this element in the new page
+            console.log("Item displayed"+item.idMeal);
+
+        } ).
+        catch(function (err) {
+	console.warn('Something went wrong.', err);
+});
+    console.log("Searching for meal with name=>"+itemid);
+}
+</script>
+
+</html>
