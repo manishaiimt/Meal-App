@@ -14,6 +14,8 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
+    <link rel = "styleSheet" href="home.css"/>
+    <script src="https://kit.fontawesome.com/33d1521b62.js" crossorigin="anonymous"></script>
 </head>
 <body>
      <div class="container">
@@ -21,7 +23,7 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8" style="text-align: center">
-                <input id="mealName" type="text"/>
+                <input id="mealName" type="text" placeholder="Search for meal"/>
             </div>
             <div class="col-md-2"></div>
         </div>
@@ -30,7 +32,9 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8" style="text-align: center">
-                <button onclick="searchMeal()">Search</button>
+                <button onclick="searchMeal()">Search
+                    <i class = "fa fa-search"></i>
+                </button>
             </div>
             <div class="col-md-2"></div>
         </div>
