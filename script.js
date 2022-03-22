@@ -88,9 +88,7 @@ function remove(item){
 function showDetail(itemid){
     console.log("Show detail -->"+itemid);
     localStorage.setItem("mealId",itemid);
+
     var mealDetail = window.open("MealDetail.html");
-
-
-
 }
 
