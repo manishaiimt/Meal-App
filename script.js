@@ -1,7 +1,7 @@
 
 function searchMeal(){
     var listOfItems = [];
-    
+
     clearSearchResult();
     var mealName = document.getElementById("mealName").value;
     // var xhr = new XMLHttpRequest();
@@ -74,7 +74,7 @@ function pageload (){
         var removeButton="<button onclick=\"remove('"+localStorage.key(i)+"')\">remove</button>";
         cell2.innerHTML = removeButton;
         }
-        
+
 
     }
 };
@@ -88,9 +88,9 @@ function remove(item){
 function showDetail(itemid){
     console.log("Show detail -->"+itemid);
     localStorage.setItem("mealId",itemid);
-    var mealDetail = window.open("/Users/indrabijaynarayan/Documents/CodingNinjas-2021/mealApp/MealDetail.html");
-    
-    
-    
+    var mealDetail = window.open("MealDetail.html");
+
+
+
 }
 
